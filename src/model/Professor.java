@@ -49,6 +49,13 @@ public class Professor extends Pessoa {
     public void setC(Classificacao c) {
         this.c = c;
     }
+
+    public void calcularSalario() {
+    }
+
+    public void setCurso(String s) {
+
+    }
 }
 
 
