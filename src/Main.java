@@ -36,6 +36,20 @@ public class Main {
 
         Curso cursoEscolhido = null;
 
+        GerenciadordeMarketing marketing = new GerenciadordeMarketing();
+
+
+        Marketing blackFridayIngles = new Marketing("Mega Black Friday - Inglês",250.00, 200.00);
+
+        Marketing blackFridayEspanhol = new Marketing("Mega Black Friday - Espanhol", 220.00, 180.00);
+
+
+        marketing.adicionarCampanha(blackFridayIngles);
+        marketing.adicionarCampanha(blackFridayEspanhol);
+
+
+        marketing.listarCampanhas();
+
         if (opcao == 1) {
             cursoEscolhido = ingles;
         } else if (opcao == 2) {
@@ -44,6 +58,13 @@ public class Main {
             System.out.println("Opção inválida!");
             return;
         }
+
+        double precoComDesconto = marketing.aplicarDesconto(
+                cursoEscolhido.getNome(),
+                cursoEscolhido.getPreco()
+        );
+
+        cursoEscolhido.setPreco(precoComDesconto);
 
 
         System.out.println("Escolha a forma de pagamento:");
@@ -60,15 +81,13 @@ public class Main {
             default -> "Não informado";
         };
 
-        // Matricular aluno e atualizar vagas
+
         cursoEscolhido.matricularAluno(a);
         a.setCurso(cursoEscolhido.getNome());
 
         System.out.println("Cadastro do aluno finalizado!\n");
 
-        // ==========================
-        // CADASTRO DO PROFESSOR
-        // ==========================
+
         System.out.println("=== Cadastro do Professor ===\n");
 
         Professor professor = new Professor();
