@@ -8,14 +8,14 @@ public class Curso {
     private Aluno aluno;
     private int vagas;
 
-    // Construtor
+
     public Curso(String nome, double preco, int vagas) {
         this.nome = nome;
         this.preco = preco;
         this.vagas = vagas;
     }
 
-    // GETTERS E SETTERS
+
     public String getNome() {
         return nome;
     }
@@ -52,7 +52,6 @@ public class Curso {
         return vagas;
     }
 
-    // Método para associar professor
     public void associarProfessor(Professor professor) {
         this.professor = professor;
     }
