@@ -17,7 +17,6 @@ public class Venda {
         this.formaPg = formapg;
     }
 
-    // Getters (mantidos como estavam)
     public int getId() {
         return id;
     }
